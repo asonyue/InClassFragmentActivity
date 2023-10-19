@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         // Attach an instance of ImageDisplayFragment using factory method
         supportFragmentManager
             .beginTransaction()
-            .add()
+            .add(R.id.fragmentContainerView, fragment1)
+            .commit()
     }
 }
