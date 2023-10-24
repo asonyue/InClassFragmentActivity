@@ -16,9 +16,10 @@ class MainActivity : AppCompatActivity() {
         val fragment1 = ImageDisplayFragment.newInstance(imageArray)
 
         // Attach an instance of ImageDisplayFragment using factory method
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.fragmentContainerView, fragment1)
-            .commit()
+//        supportFragmentManager
+//            .beginTransaction()
+//            .add(R.id.fragmentContainerView, fragment1)
+//            .commit()
+
     }
 }
