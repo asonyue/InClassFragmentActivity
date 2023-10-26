@@ -2,6 +2,7 @@ package edu.temple.inclassactivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,13 +14,8 @@ class MainActivity : AppCompatActivity() {
         val imageArray = IntArray(typedArray.length()) {typedArray.getResourceId(it, 0)}
         typedArray.recycle()
 
-        val fragment1 = ImageDisplayFragment.newInstance(imageArray)
-
-        // Attach an instance of ImageDisplayFragment using factory method
-//        supportFragmentManager
-//            .beginTransaction()
-//            .add(R.id.fragmentContainerView, fragment1)
-//            .commit()
-
+        findViewById<Button>(R.id.setbutton).setOnClickListener {
+            (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as ImageDisplayFragment).setImages(imageArray)
+        }
     }
 }

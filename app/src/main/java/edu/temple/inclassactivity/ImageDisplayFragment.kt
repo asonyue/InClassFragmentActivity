@@ -51,8 +51,9 @@ class ImageDisplayFragment : Fragment() {
         images = _images
 
         val adapter = CustomRecyclerAdapter(images)
-
-        (view as RecyclerView).adapter = adapter
+        view?.run {
+            (view as RecyclerView).adapter = adapter
+        }
     }
 
     companion object {
